@@ -26,6 +26,7 @@ def create_table():
             content TEXT NOT NULL
         );
     ''')
+    print('Database table notes created')
     conn.commit()
 
 # Function to close the database connection when the app is closed
@@ -37,9 +38,11 @@ def close_connection(exception):
 
 # Initialize the database
 def init_db():
-    create_table()
+    print('Initializing database..')
+    with app.app_context():
+        create_table()
 
-# Custom CLI command to initialize the database
+# Custom CLI command to initialize the database (if you want to initialize via cli):
 @click.command('init-db')
 @with_appcontext
 def init_db_command():
@@ -49,6 +52,7 @@ def init_db_command():
 
 # Register the custom CLI command
 app.cli.add_command(init_db_command)
+
 
 # Route to display all notes
 @app.route('/')
@@ -69,6 +73,9 @@ def add_note():
     cursor.execute('INSERT INTO notes (title, content) VALUES (%s, %s)', (title, content))
     conn.commit()
     return redirect(url_for('index'))
+
+# initialize database within the program (not via cli):
+init_db()
 
 # Run the application
 if __name__ == '__main__':
