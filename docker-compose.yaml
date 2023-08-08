@@ -12,6 +12,7 @@ services:
     depends_on: 
       - db
     tty: true
+    restart: always
 
   db: 
     image: postgres
@@ -21,6 +22,8 @@ services:
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=admin
       - POSTGRES_DB=db
+
+    restart: always
 
 volumes:
   postgres_data:
