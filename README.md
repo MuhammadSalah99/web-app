@@ -3,7 +3,9 @@
 
 I used docker-compose.yaml to build and run multiple images and thier containers.
 
-# To Run use ```docker compse up ``` 
+### To Run use ```docker compose up ``` 
+
+it will be running on [http://localhost:5000](http://127.0.0.1:5000)
 
 ## Flask App
 
