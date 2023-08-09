@@ -1,10 +1,13 @@
-# web-app
+# This is my code for the second Task 
 
-This is a python flask based sample web application to add and view notes.
 
-You need a postgres database to store the notes (change the database URL according to the database user/password and schema name).
+I used docker-compose.yaml to build and run multiple images and thier containers.
 
-#### Requirements:
-The application runs on python3 with the following library requirements:
-1. flask
-2. psycopg2-binary
+## Flask App
+
+For the flask app, I wrote down a Dockerfile that does:
+
+1- build the image from the base of python:3.8-slim-buster; I used it becasue I want to only install the minimal packges  needed to run my application.
+2- sets up the workdir as /app
+3- runs pip3 install commande for the packges that the flask uses
+4- then copies whats in the local project dir to the container file system
