@@ -11,3 +11,7 @@ For the flask app, I wrote down a Dockerfile that does:
 2. sets up the workdir as /app
 3. runs pip3 install commande for the packges that the flask uses
 4. then copies whats in the local project dir to the container file system
+
+### Database connection
+I changed DATABASE_URL to add the new port of the network thats shard between the database and the application (5432)the new port of the network thats shard between the database and the application (5432)the new port of the network thats shard between the database and the application (5432)the new port of the network thats shard between the database and the application (5432)the new port of the network thats shard between the database and the application (5432)the new port of the network thats shard between the database and the application (5432) 
+
