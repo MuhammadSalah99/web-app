@@ -3,6 +3,8 @@
 
 I used docker-compose.yaml to build and run multiple images and thier containers.
 
+# To Run use ```docker compse up ``` 
+
 ## Flask App
 
 For the flask app, I wrote down a Dockerfile that does:
